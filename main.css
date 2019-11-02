@@ -1,0 +1,178 @@
+body,html{
+    height: 100%;
+  margin: 0;
+}
+table,th,td{
+  
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td,th{
+    padding: 15px;
+}
+table th {
+    background-color: black;
+    color: white;
+    padding: 20px;
+  }
+  table tr:nth-child(even) {
+    background-color: lightblue;
+  }
+.header{
+padding: 30px; 
+text-align: center; 
+background:#3e64ff; 
+color: white;
+font-size: 40px;
+
+}
+.sheader{
+    font-size: 30px;
+}
+.form_control,.butt,.aform,.but2,.form-control,.btn{
+    border: 3px smooth black;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+}
+.butt,.but2,.btn{
+    background-color:#3e64ff;
+    color: white;
+    font-size: 16px;
+    margin-right: 20px;
+}
+.butt:hover,.but2:hover{
+    background-color: blue;
+}
+.teaLogin{
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+    padding-top: 150px;
+    padding-left: 100px;
+}
+.stdLogin{
+    box-sizing: border-box;
+    float: right;
+    width: 50%;
+    padding-top: 150px;
+    padding-left: 100px;
+    clear: both;
+}
+#but1{
+    float: right;
+    
+}
+input{
+    margin-bottom: 30px;
+}
+.top_ele{
+    background-color: #3e64ff;
+    font-family: sans-serif;
+    font-size: 16px;
+    padding:10px;
+    color:white;
+    margin: 0px;
+    
+}
+
+/*find-result css*/
+
+.test-container{
+display: flex;
+  justify-content: center;
+  background-color: white;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top:300px;
+  
+  
+  
+  
+}
+.test-container>div{
+background-color: #3e64ff;
+  width: 150px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 20px;
+  color: white;
+  
+}
+.tot-container{
+    width: 400px;
+	height: 400px;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+    right: 0;
+    background-color:white;
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    
+    
+}
+.complete{
+    width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    background-color: black;
+    
+    margin: auto;
+   
+}
+.aH{
+    color: black;
+}
+input{
+    outline:none;
+}
+
+
+/* Style tab links */
+.tablink {
+    background-color:#3b5998;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 18px;
+    font-size: 20px;
+    width: 25%;
+  }
+  
+  .tablink:hover {
+    background-color:#4b86b4;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+
+  }
+ 
+  
+  #Home {background-color:white;}
+  #News {background-color: white;}
+  #Contact {background-color: white;}
+  #About {background-color:white}
+
+  
+
+  .sub{
+
+    font-size: 30px;
+    color: black;
+  }
