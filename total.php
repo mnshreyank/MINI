@@ -21,17 +21,17 @@ if ($conn->connect_error) {
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
-<div class="top_ele">
+<body class="tst1">
+<div class="top_ele" id="z4">
          <?php
          echo "<p>" . "USN :". $_SESSION['studUsn'] . "</p>";
          echo "<p>" . "NAME :" . $_SESSION['studName'] . "</p>";
          ?>
         
 </div>
-    <div>
-    <table class="tbl1" style="width:50%">
-            <caption>Total Marks</caption>
+    <div style="padding:80px">
+    <table class="tbl1" style="width:60%">
+            <b><caption>Total Marks</caption></b>
             <tr>
                 <th>Subject Id</th>
                 <th>Subject Name</th>

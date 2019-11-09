@@ -5,6 +5,7 @@ body,html{
 table,th,td{
   
   border: 1px solid black;
+  
   border-collapse: collapse;
 }
 td,th{
@@ -18,10 +19,13 @@ table th {
   table tr:nth-child(even) {
     background-color: lightblue;
   }
+  table tr:nth-child(odd) {
+    background-color: white;
+  }
 .header{
 padding: 30px; 
 text-align: center; 
-background:#3e64ff; 
+background:rgb(31, 31, 66); 
 color: white;
 font-size: 40px;
 
@@ -67,7 +71,7 @@ input{
     margin-bottom: 30px;
 }
 .top_ele{
-    background-color: #3e64ff;
+    background-color:#082b2b ;
     font-family: sans-serif;
     font-size: 16px;
     padding:10px;
@@ -103,7 +107,7 @@ background-color: #3e64ff;
 }
 .tot-container{
     width: 400px;
-	height: 400px;
+	height: 250px;
 	position: absolute;
 	top:0;
 	bottom: 0;
@@ -124,7 +128,10 @@ background-color: #3e64ff;
 	bottom: 0;
 	left: 0;
 	right: 0;
-    background-color: black;
+    background-image: url('admin3.jpg');
+    background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
     
     margin: auto;
    
@@ -173,6 +180,46 @@ input{
 
   .sub{
 
-    font-size: 30px;
-    color: black;
+    font-size: 40px;
+    color: white;
   }
+
+  .b1{
+    background-image: url('pencil1.jpg');
+    background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  }
+  .pp1{
+    font-size: 20px;
+  }
+
+  .b2{
+    background-image: url('all.jpg');
+    background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  }
+  #c1,#z1,#z2,#z3,#z4,#z7{
+    background-color: #071d4b;
+  }
+  .cc1{
+    background-image: url('info.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+  }
+
+  .tst1{
+    background-image: url('bok1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+  } 
+  .tst7{
+    background-image: url('tea1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+  } 
+  

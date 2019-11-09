@@ -76,7 +76,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body class="">
+<body class="cc1">
     <div class="main-wrapper">
         <div class="">
             <div class="row">

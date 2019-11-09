@@ -25,7 +25,7 @@ if ($conn->connect_error) {
     <button class="tablink" onclick="openPage('About', this, '#002663')">Top 10</button>
     <div id="Home" class="tabcontent">
 
-        <table class="tbl1" style="width:75%">
+        <table class="tbl1" style="width:80%">
             <caption>Student Results</caption>
             <tr>
                 <th>USN</th>
@@ -161,7 +161,7 @@ if ($conn->connect_error) {
 
 
     <div id="News" class="tabcontent">
-        <table class="tbl1" style="width:75%">
+        <table class="tbl1" style="width:80%">
             <caption>Student Results</caption>
             <tr>
                 <th>USN</th>

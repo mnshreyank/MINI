@@ -15,14 +15,14 @@ session_start();
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
-    <div class="top_ele">
+<body class="b2">
+    <center><div class="top_ele" id="c1">
         <?php
-        echo "<p>" . "USN :" . $_SESSION['studUsn'] . "</p>";
-        echo "<p>" . "NAME :" . $_SESSION['studName'] . "</p>";
+        echo "<p class='pp1'>" . "USN :" . $_SESSION['studUsn'] . "</p>";
+        echo "<p class='pp1'>" . "NAME :" . $_SESSION['studName'] . "</p>";
         ?>
 
-    </div>
+    </div></center>
     <div class="test-container">
         <div class="fr_but" onclick="test1();">TEST 1</div>
         <div class="fr_but" onclick="test2();">TEST 2</div>

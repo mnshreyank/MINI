@@ -14,18 +14,18 @@ session_start();
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
-
+<body class="b1">
+<div class="ar1">
     <div class="top_ele">
         <?php
 
 
-        echo "TID :" . $_SESSION['teacherId'] . "<br><br>";
-        echo "NAME :";
+        echo "<p class='pp1'>TID :" . $_SESSION['teacherId'] . "</p>";
+        echo "<p class='pp1'>NAME :</p>";
         ?>
     </div>
     <div>
-        <p>Select the subject</p>
+        <p class="sub">Select the subject</p>
     </div>
     <form action="">
         <div class="col-sm-10"> <select name="subjects" id="selection" class="form-control" id="default1" required="required">
@@ -49,11 +49,12 @@ session_start();
 
                 ?>
             </select>
-        </div>
+        </div><br>
         <div>
             <button class="btn" id="done" onclick="main();">Done</button>
         </div>
     </form>
+</div>
     <script>
         
         function main() {

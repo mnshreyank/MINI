@@ -84,7 +84,7 @@ foreach(explode(",",$tsubid) as $eachSubject) {
     <button class="tablink" onclick="openPage('Contact', this, '#002663')">View Students</button>
     <button class="tablink" onclick="openPage('About', this, '#002663')">View Teachers</button>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="form-horizontal" method="post">
-        <div id="Home" class="tabcontent">
+        <div style="padding-left:40px" id="Home" class="tabcontent tst7">
             <div class="form-group">
                 <label for="default" class="col-sm-2 control-label">USN</label>
                 <div class="form-group">
@@ -138,11 +138,11 @@ foreach(explode(",",$tsubid) as $eachSubject) {
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" name="submit" class="btn btn-primary">Add</button>
                 </div>
-            </div>
+            </div><br><br><br><br>
         </div>
     </form>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-        <div id="News" class="tabcontent">
+        <div style="padding-left:40px" id="News" class="tabcontent tst7">
 
             <div class="form-group">
                 <label for="default" class="col-sm-2 control-label">TID</label>
@@ -189,12 +189,12 @@ foreach(explode(",",$tsubid) as $eachSubject) {
                 <div class="col-sm-offset-2 col-sm-10">
                     <button value="Submit" type="submit" name="submit1" class="btn btn-primary">Add</button>
                 </div>
-            </div>
+            </div><br><br><br><br><br><br>
 
         </div>
     </form>
-    <div id="Contact" class="tabcontent">
-        <table class="tbl1" style="width:75%">
+    <div style="padding:80px"id="Contact" class="tabcontent">
+        <table class="tbl1" style="width:80%">
             <caption>Student Information</caption>
             <tr>
                 <th>USN</th>
@@ -224,7 +224,7 @@ foreach(explode(",",$tsubid) as $eachSubject) {
 
     </div>
 
-    <div id="About" class="tabcontent">
+    <div style="padding:80px" id="About" class="tabcontent">
     
         <table class="tbl1" style="width:75%">
             <caption>Teacher Information</caption>
