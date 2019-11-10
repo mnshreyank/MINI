@@ -15,8 +15,8 @@ session_start();
 </head>
 
 <body class="b1">
-<div class="ar1">
-    <div class="top_ele">
+<div style="padding:10px" class="ar1">
+    <div  class="top_ele">
         <?php
 
 
@@ -24,7 +24,7 @@ session_start();
         echo "<p class='pp1'>NAME :</p>";
         ?>
     </div>
-    <div>
+   <center> <div style="padding-top:100px">
         <p class="sub">Select the subject</p>
     </div>
     <form action="">
@@ -54,7 +54,7 @@ session_start();
             <button class="btn" id="done" onclick="main();">Done</button>
         </div>
     </form>
-</div>
+</div></center>
     <script>
         
         function main() {

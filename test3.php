@@ -31,7 +31,7 @@ if ($conn->connect_error) {
 </div>
     <div style="padding:80px">
     <table class="tbl1" style="width:60%">
-            <caption>Test3 Marks : MAX 30</caption>
+            <caption>Test3 Marks : MAX 20</caption>
             <tr>
                 <th>Subject Id</th>
                 <th>Subject Name</th>

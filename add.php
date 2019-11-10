@@ -193,7 +193,7 @@ foreach(explode(",",$tsubid) as $eachSubject) {
 
         </div>
     </form>
-    <div style="padding:80px"id="Contact" class="tabcontent">
+    <div style="padding:80px"id="Contact" class="tabcontent ">
         <table class="tbl1" style="width:80%">
             <caption>Student Information</caption>
             <tr>
@@ -224,7 +224,7 @@ foreach(explode(",",$tsubid) as $eachSubject) {
 
     </div>
 
-    <div style="padding:80px" id="About" class="tabcontent">
+    <div style="padding:80px" id="About" class="tabcontent tst7">
     
         <table class="tbl1" style="width:75%">
             <caption>Teacher Information</caption>

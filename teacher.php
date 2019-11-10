@@ -23,7 +23,7 @@ if ($conn->connect_error) {
     <button class="tablink" onclick="openPage('News', this, '#002663')" id="defaultOpen">View Results</button>
     <button class="tablink" onclick="openPage('Contact', this, '#002663')">Visualise</button>
     <button class="tablink" onclick="openPage('About', this, '#002663')">Top 10</button>
-    <div id="Home" class="tabcontent">
+    <div style="padding:80px" id="Home" class="tabcontent">
 
         <table class="tbl1" style="width:80%">
             <caption>Student Results</caption>
@@ -46,10 +46,17 @@ if ($conn->connect_error) {
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    echo "<tr><td>" . $row['s_usn'] . "</td><td>" . $row['s_name'] . "</td><td>" . "<form action='last.php' method='Post'>" . "<input name='test1' placeholder='' value='" . $row["test1"] . "' class='form_control' type='text'>" . "</td><td>" . "<input name='test2' placeholder='' value='" . $row["test2"] . "' class='form_control' type='text'>" . "</td><td>" . "<input name='test3' placeholder='' value='" . $row["test3"] . "' class='form_control' type='text'>" . "</td><td>" . "<input placeholder='' value='" . $row["final"] . "' name='final' class='form_control' type='text'>" . "</td></tr>";
+                    $usn=$row['s_usn'];
+                    $name=$row['s_name'];
+                    $test1=$row['test1'];
+                    $test2=$row['test2'];
+                    $test3=$row['test3'];
+                    $final=$row['final'];
+
+                    echo "<tr><td>" . $usn . "</td><td>" . $name . "</td><td>" . "<form action='last.php' method='Post'>" . "<input name='test1[".$usn."]' placeholder='' value='" . $row["test1"] . "' class='form_control' type='text'>" . "</td><td>" . "<input name='test2[".$usn."]' placeholder='' value='" . $row["test2"] . "' class='form_control' type='text'>" . "</td><td>" . "<input name='test3[".$usn."]' placeholder='' value='" . $row["test3"] . "' class='form_control' type='text'>" . "</td><td>" . "<input placeholder='' value='" . $row["final"] . "' name='final[".$usn."]' class='form_control' type='text'>" . "</td></tr>";
                 }
                 echo "</table>";
-                echo "<br>" . "<button name='fbtn' class='btn'>" . "Save" . "</button>";
+                echo "<br>" . "<input type='submit' value='Save' name='submitt' class='btn'>";
                 echo "</form>";
             }
 
@@ -66,7 +73,7 @@ if ($conn->connect_error) {
     <div id="Contact" class="tabcontent">
         <?php
 
-        $sql21="Select t_subject_student.final from t_subject_student join t_student on t_subject_student.s_usn=t_student.s_usn join t_subject on t_subject_student.sub_id=t_subject.sub_id where t_subject.tea_id='" . $_SESSION["teacherId"] . "' and t_subject.sub_id='" . $_COOKIE["selectedSubject"] . "'";
+        $sql21="Select t_subject_student.test1,t_subject_student.test2,t_subject_student.test3,t_subject_student.final from t_subject_student join t_student on t_subject_student.s_usn=t_student.s_usn join t_subject on t_subject_student.sub_id=t_subject.sub_id where t_subject.tea_id='" . $_SESSION["teacherId"] . "' and t_subject.sub_id='" . $_COOKIE["selectedSubject"] . "'";
         $result = $conn->query($sql21);
 
         $c1=0;
@@ -76,28 +83,29 @@ if ($conn->connect_error) {
         $c5=0;
         $c6=0;
         $c7=0;
-        $c8=0;
+        
+        
         if ($result->num_rows > 0) {
             
             while ($row = $result->fetch_assoc()) {
+                $finalResult=ceil(($row['test1']+$row['test2']+$row['test3'])/3+($row['final']));
 
-                if($row['final']>=90){
+                if($finalResult>=90){
                     $c1++;
                 }
-                else if($row['final']>=80 and $row['final']<90){
+                else if($finalResult>=80 and $finalResult<90){
                     $c2++;
-                }else if($row['final']>=70 and $row['final']<80){
+                }else if($finalResult>=70 and $finalResult<80){
                     $c3++;
-                }else if($row['final']>=60 and $row['final']<70){
+                }else if($finalResult>=60 and $finalResult<70){
                     $c4++;
-                }else if($row['final']>=50 and $row['final']<60){
+                }else if($finalResult>=50 and $finalResult<60){
                     $c5++;
-                }else if($row['final']>=40 and $row['final']<50){
+                }else if($finalResult>=40 and $finalResult<50){
                     $c6++;
-                }else if($row['final']>=28 and $row['final']<40){
-                    $c7++;
+                
                 }else{
-                    $c8++;
+                    $c7++;
                 }
             }
         }
@@ -108,8 +116,8 @@ if ($conn->connect_error) {
             array("label" => "60-70", "y" => $c4),
             array("label" => "50-60", "y" => $c5),
             array("label" => "40-50", "y" => $c6),
-            array("label" => "28-40", "y" => $c7),
-            array("label" => "Below 28", "y" => $c8),
+            array("label" => "Below 40(FAIL)", "y" => $c7),
+            
 
         );
         
@@ -160,7 +168,7 @@ if ($conn->connect_error) {
     </div>
 
 
-    <div id="News" class="tabcontent">
+    <div style="padding:80px" id="News" class="tabcontent">
         <table class="tbl1" style="width:80%">
             <caption>Student Results</caption>
             <tr>
@@ -190,7 +198,7 @@ if ($conn->connect_error) {
     </div>
 
 
-    <div id="About" class="tabcontent">
+    <div style="padding:80px" id="About" class="tabcontent">
         <table class="tbl1" style="width:75%">
             <caption>Top 10</caption>
             <tr>
@@ -204,12 +212,15 @@ if ($conn->connect_error) {
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "SELECT t_subject_student.s_usn,t_student.s_name,t_subject_student.final from t_subject_student join t_student  on t_subject_student.s_usn=t_student.s_usn JOIN t_subject on t_subject_student.sub_id=t_subject.sub_id where t_subject.tea_id='" . $_SESSION["teacherId"] . "' and t_subject.sub_id='" . $_COOKIE["selectedSubject"] . "' ORDER BY t_subject_student.final DESC;";
+            $sql = "SELECT t_subject_student.s_usn,t_subject_student.test1,t_subject_student.test2,t_subject_student.test3,t_student.s_name,t_subject_student.final from t_subject_student join t_student  on t_subject_student.s_usn=t_student.s_usn JOIN t_subject on t_subject_student.sub_id=t_subject.sub_id where t_subject.tea_id='" . $_SESSION["teacherId"] . "' and t_subject.sub_id='" . $_COOKIE["selectedSubject"] . "' ORDER BY t_subject_student.final DESC;";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    echo "<tr><td>" . $row['s_usn'] . "</td><td>" . $row['s_name'] . "</td><td>" . $row['final'] . "</td></tr>";
+
+                    $finalResult=ceil(($row['test1']+$row['test2']+$row['test3'])/3+($row['final']));
+
+                    echo "<tr><td>" . $row['s_usn'] . "</td><td>" . $row['s_name'] . "</td><td>" . $finalResult. "</td></tr>";
                 }
                 echo "</table>";
             }
